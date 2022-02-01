@@ -7,6 +7,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 999;
 }
 .tweeter{
   font-family: "Bungee", sans-serif;
@@ -14,6 +15,13 @@ nav {
 
 .writeTweet {
   font-size: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  padding-top: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
