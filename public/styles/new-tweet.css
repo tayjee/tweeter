@@ -1,0 +1,40 @@
+.tweet-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  background-color: #3A3B3C;
+}
+
+.tweet-text textarea {
+  color: white;
+  background-color: inherit;
+  outline: none;
+  height: 40px;
+  resize: none;
+  border-bottom:3px solid;
+  border-top: hidden;
+  border-right: hidden;
+  border-left: hidden;
+  border-color: white;
+}
+
+.tweet-button {
+  background-color: #4056A1;
+  color: white;
+}
+
+.tweet-submit {
+  font-family: "Bungee", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  background-color: #3A3B3C;
+}
