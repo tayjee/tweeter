@@ -21,6 +21,13 @@ body {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+main {
+  width: 90%;
+  background-color: #3A3B3C;
+  display: flex;
+  align-items: center;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
