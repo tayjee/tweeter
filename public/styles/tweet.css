@@ -30,8 +30,21 @@
 }
 
 .footer {
+  font-size: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding:0.5em;
+}
+
+.user-tweet:hover {
+  box-shadow: 7px 7px grey;
+}
+
+.icons {
+  font-size: 20px;
+}
+
+.icons :hover {
+  color:goldenrod;
 }
