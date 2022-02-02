@@ -6,7 +6,7 @@
   border-top: 3px solid;
   border-right: 3px solid;
   border-left: 3px solid;
-  border-color: #000000;
+  border-color: #5051A1;
 }
 
 .user-name {
@@ -14,16 +14,24 @@
   flex-direction: row;
   align-items:center;
   justify-content:space-between;
-  padding:1em;
+  padding:0.25em;
 }
 
 .user-post {
   display:flex;
   align-items:flex-start;
-  padding:2em;
+  padding:1em;
+  padding-bottom: 5px;
   border-bottom:3px solid;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
   border-color: #000000;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:0.5em;
 }
