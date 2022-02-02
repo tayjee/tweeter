@@ -3,11 +3,12 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-$(document).ready(function() {
+$(document).ready(() => {
 
 function createTweetElement (tweetObject) {
-  let $tweetElement = $(`
+  const time = timeago.format(tweetObject.created_at);
+
+  let tweetElement = `
   <article class = "user-tweet">
   <div class = "tweet-header">
     <div class = "user-name">
@@ -24,7 +25,7 @@ function createTweetElement (tweetObject) {
     </p>
   </div>
   <div class = "footer">
-    ${tweetObject["created_at"]}
+    ${time}
     <div class = "icons">
       <i class="fas fa-flag"></i>
       <i class="fas fa-retweet"></i>
@@ -32,12 +33,12 @@ function createTweetElement (tweetObject) {
     </div>
   </div>
 </article>
-  `);
+  `;
 
-  return $tweetElement
+  return tweetElement;
 }
 
-const tweetData = {
+const data = {
   "user": {
     "name": "Newton",
     "avatars": "https://i.imgur.com/73hZDYK.png",
@@ -49,9 +50,14 @@ const tweetData = {
   "created_at": 1461116232227
 }
 
-const $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+const renderTweets = function(tweets) {
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+  tweets.forEach((tweetObject) => {
+    $('#tweets-container').append(createTweetElement(tweetObject));
+  });
+};
 });
+
+renderTweets(data);
