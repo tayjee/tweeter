@@ -1,5 +1,4 @@
 .user-tweet {
-  margin: 0;
   background-color: #FFFFFF;
   color: #4056A1;
   border-bottom:3px solid;
@@ -9,36 +8,41 @@
   border-color: #5051A1;
 }
 
+.tweet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
 .user-name {
   display: flex;
   flex-direction: row;
-  align-items:center;
-  justify-content:space-between;
-  padding:0.25em;
+  align-items:flex-start;
 }
 
 .user-post {
   display:flex;
   align-items:flex-start;
-  padding:1em;
-  padding-bottom: 5px;
+  padding:0.25em;
+  padding-bottom: 10px;
   border-bottom:3px solid;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
-  border-color: #000000;
+  border-color: #5051A1;
 }
 
 .footer {
-  font-size: 12px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:0.5em;
+  padding:1em;
 }
 
 .user-tweet:hover {
-  box-shadow: 7px 7px grey;
+  box-shadow: 7px 7px #4041a1;
 }
 
 .icons {
