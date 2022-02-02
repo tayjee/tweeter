@@ -1,0 +1,29 @@
+.user-tweet {
+  margin: 0;
+  background-color: #FFFFFF;
+  color: #4056A1;
+  border-bottom:3px solid;
+  border-top: 3px solid;
+  border-right: 3px solid;
+  border-left: 3px solid;
+  border-color: #000000;
+}
+
+.user-name {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-between;
+  padding:1em;
+}
+
+.user-post {
+  display:flex;
+  align-items:flex-start;
+  padding:2em;
+  border-bottom:3px solid;
+  border-top: hidden;
+  border-right: hidden;
+  border-left: hidden;
+  border-color: #000000;
+}
