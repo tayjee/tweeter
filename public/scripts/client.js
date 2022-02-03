@@ -46,7 +46,7 @@ const renderTweets = (tweets) =>  {
 };
 
 const loadTweets = () => {
-  $.ajax('http://localhost:8080/tweets', {method: 'GET'})
+  $.ajax({url: '/tweets', method: 'GET'})
   .then(tweets => renderTweets(tweets));
 };
 
