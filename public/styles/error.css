@@ -1,0 +1,14 @@
+.error-message {
+  color: white;
+  background-color: red;
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content:space-between;
+  border-bottom:2px solid;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  border-left: 2px solid;
+  border-color: white;
+  padding: 0.5em;
+}
