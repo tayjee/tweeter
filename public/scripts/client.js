@@ -62,10 +62,10 @@ $(".tweet-form").on("submit", function(event) {
   let formLength = $(this).serializeArray()[0].value.length;
   //same as above but removes all white space to use to check if text is blank
   let emptyCheck= $(this).serializeArray()[0].value.replace(/\s+/g, '').length;
-  //condition to check if text exceeds maximum allowed characters
+
   let errorSlider = $('.error-slider');
   let $errorText = $('.error-text');
-
+  //condition to check if text exceeds maximum allowed characters
   if (formLength > 140) {
     $errorText.text("Your tweet exceeds the maximum character count of 140!");
     errorSlider.slideDown();
