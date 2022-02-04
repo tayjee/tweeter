@@ -63,19 +63,23 @@ $(".tweet-form").on("submit", function(event) {
   //same as above but removes all white space to use to check if text is blank
   let emptyCheck= $(this).serializeArray()[0].value.replace(/\s+/g, '').length;
   //condition to check if text exceeds maximum allowed characters
+  let errorSlider = $('.error-slider');
+  let $errorText = $('.error-text');
+
   if (formLength > 140) {
-    alert("Tweet exceeds the character limit!");
-    return;
+    $errorText.text("Your tweet exceeds the maximum character count of 140!");
+    errorSlider.slideDown();
     //condition to check if text contains only spaces
   } else if (emptyCheck === 0) {
-      alert("Tweet cannot be blank!");
-      return;
+    $errorText.text("Your tweet is empty!");
+      errorSlider.slideDown();
       //if both conditions aren't triggered, loads new tweets
     } else {
       $.ajax('/tweets', { method: 'POST', data: form})
       .then(loadTweets);
       $('#tweet-text').val('');
       $('.counter').text(140);
+      errorSlider.slideUp();
     }
 });
 
