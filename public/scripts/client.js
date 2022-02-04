@@ -12,7 +12,9 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
+  //Function that uses template literals to insert data into a HTML markup
   const createTweetElement  = (tweetObject) => {
+    //HTML MARKUP
   let $tweet = `
   <article class = "user-tweet">
   <div class = "tweet-header">
@@ -42,10 +44,9 @@ $(document).ready(() => {
   return $tweet;
 }
 
+//Function that loops through tweets and calls createTweetElement for each
+//and prepends it to the tweets container
 const renderTweets = (tweets) =>  {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and prepends it to the tweets container
   $('#tweet-container').text('');
   for (let tweet of tweets) {
     let $tweetPost = createTweetElement(tweet);
@@ -53,17 +54,23 @@ const renderTweets = (tweets) =>  {
   }
 };
 
+//Function that on form submission, loads the new tweet and clears form text on success
 $(".tweet-form").on("submit", function(event) {
   event.preventDefault();
   let form = $(this).serialize();
+  //variable to see how many characters are in the text
   let formLength = $(this).serializeArray()[0].value.length;
+  //same as above but removes all white space to use to check if text is blank
   let emptyCheck= $(this).serializeArray()[0].value.replace(/\s+/g, '').length;
+  //condition to check if text exceeds maximum allowed characters
   if (formLength > 140) {
     alert("Tweet exceeds the character limit!");
     return;
+    //condition to check if text contains only spaces
   } else if (emptyCheck === 0) {
       alert("Tweet cannot be blank!");
       return;
+      //if both conditions aren't triggered, loads new tweets
     } else {
       $.ajax('/tweets', { method: 'POST', data: form})
       .then(loadTweets);
@@ -71,6 +78,7 @@ $(".tweet-form").on("submit", function(event) {
     }
 });
 
+//function to load tweets
 const loadTweets = () => {
   $.ajax({url: '/tweets', method: 'GET'})
   .then(tweets => renderTweets(tweets));
