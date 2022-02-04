@@ -75,6 +75,7 @@ $(".tweet-form").on("submit", function(event) {
       $.ajax('/tweets', { method: 'POST', data: form})
       .then(loadTweets);
       $('#tweet-text').val('');
+      $('.counter').text(140);
     }
 });
 
