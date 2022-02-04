@@ -38,7 +38,8 @@ const createTweetElement  = (tweetObject) => {
 const renderTweets = (tweets) =>  {
   // loops through tweets
   // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+  // takes return value and prepends it to the tweets container
+  $('#tweet-container').text('');
   for (let tweet of tweets) {
     let $tweetPost = createTweetElement(tweet);
     $('#tweet-container').prepend($tweetPost);
@@ -58,7 +59,7 @@ $(".tweet-form").on("submit", function(event) {
       return;
     } else {
       $.ajax('/tweets', { method: 'POST', data: form})
-      .then(tweets => loadTweets(tweets));
+      .then(loadTweets);
     }
 });
 
