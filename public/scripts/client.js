@@ -5,7 +5,14 @@
  */
 $(document).ready(() => {
 
-const createTweetElement  = (tweetObject) => {
+  //Prevents Cross Site Scripting (XSS) - reformats text
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  const createTweetElement  = (tweetObject) => {
   let $tweet = `
   <article class = "user-tweet">
   <div class = "tweet-header">
@@ -19,7 +26,7 @@ const createTweetElement  = (tweetObject) => {
   </div>
   <div class = "user-post">
     <p>
-      ${tweetObject["content"].text}
+      ${escape(tweetObject["content"].text)}
     </p>
   </div>
   <div class = "footer">
