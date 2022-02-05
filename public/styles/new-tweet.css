@@ -20,7 +20,9 @@
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
-  border-color: white;
+  border-color: white; 
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 .tweet-button {
